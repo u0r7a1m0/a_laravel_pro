@@ -18,9 +18,9 @@ class CreateContactsTable extends Migration
 
             $table->string('name', 20)->nullable(false);
             $table->string('email', 255)->nullable(false);
-            $table->string('contact', 1000)->nullable(false);
-            $table->integer('age')->nullable();
-            $table->integer('gender')->nullable();
+            $table->string('contact', 1000)->nullable(false)->comment('内容');
+            $table->integer('age')->nullable()->comment('年齢');
+            $table->integer('gender')->nullable()->comment('性別');
             $table->unsignedBigInteger('department_id');
 
             $table->foreign('department_id')->references('id')->on('departments');
