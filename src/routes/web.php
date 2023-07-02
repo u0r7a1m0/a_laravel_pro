@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\DepartmentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('contacts.index');
 });
 
 //入力フォームページ
-// Route::get('/',[ContactsController::class, 'index'])->name('index');
+Route::resource('contacts', ContactsController::class); 
+
